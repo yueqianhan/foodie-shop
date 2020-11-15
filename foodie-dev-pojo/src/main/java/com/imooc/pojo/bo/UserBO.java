@@ -11,8 +11,7 @@ public class UserBO {
     private String password;
     @ApiModelProperty(value = "确认密码",name = "confirmPassword",example = "123123",required = false)
     private String confirmPassword;
-	private int age;
-	private String height;
+
 
     public String getUsername() {
         return username;
