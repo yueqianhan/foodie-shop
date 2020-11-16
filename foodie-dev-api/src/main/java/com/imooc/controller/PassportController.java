@@ -42,6 +42,11 @@ public class PassportController {
     @PostMapping("/regist")
     public IMOOCJSONResult regist(@RequestBody UserBO userBO, HttpServletRequest request,
                                   HttpServletResponse response) {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String username = userBO.getUsername();
         String password = userBO.getPassword();
         String confirmPassword = userBO.getConfirmPassword();
@@ -77,6 +82,11 @@ public class PassportController {
     @PostMapping("/login")
     public IMOOCJSONResult login(@RequestBody UserBO userBO, HttpServletRequest request,
                                   HttpServletResponse response) throws Exception {
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String username = userBO.getUsername();
         String password = userBO.getPassword();
 
