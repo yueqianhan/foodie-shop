@@ -1,5 +1,7 @@
 E:\foodie-dev\foodie-dev-api\src\main\java\com\imooc\controller\StuController.java
 E:\foodie-dev\foodie-dev-api\src\main\java\com\imooc\config\Swagger2.java
+E:\foodie-dev\foodie-dev-api\src\main\java\com\imooc\aspect\ServiceLogAspect.java
+E:\foodie-dev\foodie-dev-api\src\main\java\com\imooc\controller\IndexController.java
 E:\foodie-dev\foodie-dev-api\src\main\java\com\imooc\config\CorsConfig.java
 E:\foodie-dev\foodie-dev-api\src\main\java\com\imooc\Application.java
 E:\foodie-dev\foodie-dev-api\src\main\java\com\imooc\controller\PassportController.java

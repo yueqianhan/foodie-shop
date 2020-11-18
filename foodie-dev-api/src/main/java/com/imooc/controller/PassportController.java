@@ -42,11 +42,11 @@ public class PassportController {
     @PostMapping("/regist")
     public IMOOCJSONResult regist(@RequestBody UserBO userBO, HttpServletRequest request,
                                   HttpServletResponse response) {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         String username = userBO.getUsername();
         String password = userBO.getPassword();
         String confirmPassword = userBO.getConfirmPassword();
@@ -82,11 +82,11 @@ public class PassportController {
     @PostMapping("/login")
     public IMOOCJSONResult login(@RequestBody UserBO userBO, HttpServletRequest request,
                                   HttpServletResponse response) throws Exception {
-        try {
-            Thread.sleep(2500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(2500);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         String username = userBO.getUsername();
         String password = userBO.getPassword();
 
@@ -114,5 +114,17 @@ public class PassportController {
         userResult.setMobile(null);
         userResult.setBirthday(null);
         return userResult;
+    }
+
+    @ApiOperation(value = "用户退出登录", notes = "用户退出登录", httpMethod = "POST")
+    @PostMapping("/logout")
+    public IMOOCJSONResult logout(@RequestParam String userId,HttpServletRequest request,
+                                  HttpServletResponse response){
+        //清除用户相关信息的cookie
+        CookieUtils.deleteCookie(request,response,"user");
+
+        //TODO 用户退出登录需求清空购物车
+        //TODO 分布式会话中需要清除用户数据
+        return IMOOCJSONResult.ok();
     }
 }
