@@ -7,7 +7,9 @@ import com.imooc.mapper.*;
 import com.imooc.pojo.*;
 import com.imooc.pojo.vo.CommentLevelCountsVO;
 import com.imooc.pojo.vo.ItemCommentVO;
+import com.imooc.pojo.vo.SearchItemsVO;
 import com.imooc.service.ItemService;
+import com.imooc.utils.DesensitizationUtil;
 import com.imooc.utils.PagedGridResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -97,7 +99,41 @@ public class ItemServiceImpl  implements ItemService {
          */
         PageHelper.startPage(page,pageSize);
         List<ItemCommentVO> list = itemsMapperCustom.queryItemComments(map);
+        for (ItemCommentVO vo:
+             list) {
+            vo.setNickname(DesensitizationUtil.commonDisplay("nickname"));
+        }
         return setterPagedGrid(list,page);
+    }
+
+    /**
+     *
+     * @param itemId
+     * @param level
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult searchItems(String keywords, String sort, Integer page, Integer pageSize) {
+        Map<String,Object> map = new HashMap<>();
+        map.put("keywords",keywords);
+        map.put("sort",sort);
+        PageHelper.startPage(page,pageSize);
+        List<SearchItemsVO> searchItemsVOS = itemsMapperCustom.searchItems(map);
+        return setterPagedGrid(searchItemsVOS,page);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult searchItems(Integer catId, String sort, Integer page, Integer pageSize) {
+        Map<String,Object> map = new HashMap<>();
+        map.put("catId",catId);
+        map.put("sort",sort);
+        PageHelper.startPage(page,pageSize);
+        List<SearchItemsVO> searchItemsVOS = itemsMapperCustom.searchItemsByThirdCat(map);
+        return setterPagedGrid(searchItemsVOS,page);
     }
 
     private PagedGridResult setterPagedGrid(List<?> list, Integer page) {
