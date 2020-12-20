@@ -13,7 +13,9 @@ E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\strategy\DefaultW
 E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\Sid.java
 E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\RandomCodeStrategy.java
 E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\utils\Utils.java
+E:\foodie-dev\foodie-dev-common\src\main\java\com\imooc\utils\MobileEmailUtils.java
 E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\utils\IPv4Utils.java
+E:\foodie-dev\foodie-dev-common\src\main\java\com\imooc\enums\PayMethod.java
 E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\utils\HttpReq.java
 E:\foodie-dev\foodie-dev-common\src\main\java\com\imooc\utils\DesensitizationUtil.java
 E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\InvalidSystemClock.java
@@ -25,5 +27,6 @@ E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\Id.java
 E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\strategy\DayPrefixRandomCodeStrategy.java
 E:\foodie-dev\foodie-dev-common\src\main\java\com\imooc\enums\Sex.java
 E:\foodie-dev\foodie-dev-common\src\main\java\com\imooc\utils\JsonUtils.java
+E:\foodie-dev\foodie-dev-common\src\main\java\com\imooc\enums\OrderStatusEnum.java
 E:\foodie-dev\foodie-dev-common\src\main\java\org\n3r\idworker\strategy\FileLock.java
 E:\foodie-dev\foodie-dev-common\src\main\java\com\imooc\utils\MD5Utils.java
